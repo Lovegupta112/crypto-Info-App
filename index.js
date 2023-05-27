@@ -39,11 +39,12 @@ function coinsRow(data) {
     <td id="symbol">${data.symbol.toUpperCase()}</td>
     <td style="text-align: right;">$${data.current_price}</td>
     <td style="text-align: right;">$${data.total_volume}</td>
-    <td style="text-align:right;${data.market_cap_change_percentage_24h.toFixed(2) >= 0 ? "color:green;" : "color:red;"}">${data.market_cap_change_percentage_24h.toFixed(2)}%</td>
+    <td style="text-align:right;${data.price_change_percentage_24h.toFixed(2) >= 0 ? "color:green;" : "color:red;"}">${data.price_change_percentage_24h.toFixed(2)}%</td>
     <td style="text-align:right;">Mkt Cap: $${data.market_cap} </td>
   </tr>
   `
 }
+
 
 
 function appendDataonRow(dataArr) {
@@ -82,7 +83,7 @@ let mktCap = document.getElementById('bymktCap');
 mktCap.addEventListener('click', sortByMktCap);
 
 function sortByMktCap() {
-    // console.log(mktCap);
+    console.log(mktCap);
 
     dataArr.sort(function (ob1, ob2) {
         return ob1.market_cap > ob2.market_cap;
@@ -100,10 +101,10 @@ bypercentage.addEventListener('click', sortBypercentage);
 
 
 function sortBypercentage() {
-    // console.log(bypercentage);
+    console.log(bypercentage);
 
     dataArr.sort(function (ob1, ob2) {
-        return ob1.market_cap_change_percentage_24h.toFixed(2) > ob2.market_cap_change_percentage_24h.toFixed(2);
+        return ob1.price_change_percentage_24h.toFixed(2) > ob2.price_change_percentage_24h.toFixed(2);
     })
 
     tbody.innerHTML = "";
