@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.container {
+    display:flex;
+    min-width: 80%;
+  margin: 2rem auto;
+}
+table {
+  /* border:1px solid black; */
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table thead .search input {
+  width: 97%;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #8e8e8e;
+  padding: 0 1rem;
+  height: 30px;
+}
+.search input:focus {
+  outline: none;
+}
+::placeholder {
+  color: #ffffff;
+}
+table thead .sort {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+.sort button {
+  width: 47%;
+  background-color: transparent;
+  color: rgb(221, 207, 207);
+  border: 1px solid #8e8e8e;
+  cursor: pointer;
+}
+tbody tr {
+  border-bottom: 1px solid #8e8e8e;
+}
+tbody tr td {
+  padding: 0.6rem 0;
+  font-size:1rem;
+}
+img {
+  width: 24px;
+  height: 26px;
+}
+
+
+@media screen and (max-width:900px) {
+    tbody tr td {
+    font-size:0.7rem;
+    }
+    button{
+        font-size:0.7rem;
+    }
+}
+@media screen and (max-width:700px) {
+
+    tbody tr td {
+        font-size:0.5rem;
+     }
+    button{
+    font-size:0.5rem;
+     }
+     table thead .search input{
+        font-size:0.5rem;
+      }
+}
